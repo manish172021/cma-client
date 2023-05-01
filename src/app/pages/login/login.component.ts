@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/user.model';
+import { User } from '../../models/user.model';
 import { AuthenticationService } from "../../services/authentication.service";
 import { Router } from "@angular/router";
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';

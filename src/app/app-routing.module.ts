@@ -8,7 +8,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
 import { AuthGuard } from './guards/auth.guard';
-import { Role } from './pages/models/role.enum';
+import { Role } from './models/role.enum';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Role } from './pages/models/role.enum';
-import { User } from './pages/models/user.model';
+import { Role } from './models/role.enum';
+import { User } from './models/user.model';
 import { AuthenticationService } from './services/authentication.service';
 
 @Component({

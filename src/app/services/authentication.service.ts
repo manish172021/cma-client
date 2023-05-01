@@ -3,7 +3,7 @@ import { environment } from "../../environments/environment";
 import { BehaviorSubject, Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
-import { User } from '../pages/models/user.model';
+import { User } from '../models/user.model';
 
 const API_URL = environment.BASE_URL + '/api/authentication';
 
