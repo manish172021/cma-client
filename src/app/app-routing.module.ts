@@ -7,20 +7,32 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
+import { AuthGuard } from './guards/auth.guard';
+import { Role } from './pages/models/role.enum';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 
-  {path: 'home', component: HomeComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 
-  {path: 'profile', component: ProfileComponent},
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.ADMIN, Role.USER] }
+  },
 
-  {path: 'admin', component: AdminComponent},
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.ADMIN] }
+  },
 
-  {path: '404', component: NotFoundComponent},
-  {path: '401', component: UnauthorizedComponent},
+  { path: '404', component: NotFoundComponent },
+  { path: '401', component: UnauthorizedComponent },
 ];
 
 @NgModule({
